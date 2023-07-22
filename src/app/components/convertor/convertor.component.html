@@ -1,0 +1,66 @@
+<div class="convertor">
+
+  <div>
+    <label>You pay</label>
+    <div class="input-group">
+      <input
+        class="input"
+        placeholder="Enter value"
+        (input)="changePayValue()"
+        [(ngModel)]="payValue"
+      >
+      <div
+        *ngIf="!Number(payValue) && payValue.length"
+        class="error-message"
+      >
+        {{ errorMessage | titlecase }}
+      </div>
+
+      <select
+        class="input"
+        [(ngModel)]="payCurrency"
+        (ngModelChange)="changePayValue()"
+      >
+        <option
+          *ngFor="let item of selectValue"
+          [ngValue]="item.code"
+        >
+          {{item.value}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div>
+    <label>You get</label>
+    <div class="input-group">
+      <input
+        class="input"
+        (input)="changeGetValue()"
+        [(ngModel)]="getValue"
+      >
+      <div
+        *ngIf="!Number(getValue) && getValue.length"
+        class="error-message"
+      >
+        {{ errorMessage | titlecase }}
+      </div>
+
+      <select
+        class="input"
+        [(ngModel)]="getCurrency"
+        (ngModelChange)="changePayValue()"
+      >
+        <ng-container >
+          <option
+            *ngFor="let item of selectValue"
+            [ngValue]="item.code"
+          >
+            {{item.value}}
+          </option>
+        </ng-container>
+      </select>
+    </div>
+  </div>
+
+</div>

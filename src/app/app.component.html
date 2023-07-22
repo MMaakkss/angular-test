@@ -1,0 +1,12 @@
+<app-error></app-error>
+
+<div class="toolbar" role="banner">
+  <div>EUR: {{ eur | number:'0.1-2' }}</div>
+  <div>USD: {{ usd | number:'0.1-2' }}</div>
+</div>
+
+<div class="content" role="main">
+  <app-converter [currency]="currency" />
+<!--  <app-converter *ngIf="currency.length" [currency]="currency" />-->
+</div>
+

@@ -1,0 +1,44 @@
+.convertor {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 62px;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    position: relative;
+
+    .error-message {
+      color: #e43d3d;
+      font-size: 14px;
+      position: absolute;
+      left: 0;
+      top: 100%;
+    }
+
+    .input {
+      flex: 1;
+      min-width: 180px;
+      border: 1px solid #c8bfbf;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 16px;
+
+      &:disabled {
+        border: none;
+        background: #e5e5e5;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
